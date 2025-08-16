@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card'
+import { Button } from '../../components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs'
 import { 
   Users, 
   GamepadIcon, 
@@ -16,10 +16,10 @@ import {
   Settings,
   FileText
 } from 'lucide-react'
-import { useRequireAdmin } from '@/hooks/use-admin'
-import { PageWrapper } from '@/components/page-loading'
-import { LoadingSpinner } from '@/components/ui/loading'
-import { useErrorHandler } from '@/hooks/use-error-handler'
+import { useRequireAdmin } from '../../hooks/use-admin'
+import { PageWrapper } from '../../components/page-loading'
+import { LoadingSpinner } from '../../components/ui/loading'
+import { useErrorHandler } from '../../hooks/use-error-handler'
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Bar, BarChart } from 'recharts'
 import Link from 'next/link'
 
