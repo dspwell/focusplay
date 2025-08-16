@@ -17,6 +17,15 @@ const nextConfig = {
     serverComponentsExternalPackages: ["openai"],
     scrollRestoration: true, // 启用滚动位置恢复
   },
+  
+  // 确保路径解析正确
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': '.',
+    }
+    return config
+  },
   // 启用压缩
   compress: true,
   
