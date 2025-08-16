@@ -15,9 +15,7 @@ const nextConfig = {
   },
   experimental: {
     serverComponentsExternalPackages: ["openai"],
-    optimizeCss: true, // 启用CSS优化
     scrollRestoration: true, // 启用滚动位置恢复
-    typedRoutes: true, // 启用类型化路由
   },
   // 启用压缩
   compress: true,
