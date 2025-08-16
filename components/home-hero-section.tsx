@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "../../../components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card"
 import { Star, Users, Clock, Target, Brain, Heart } from 'lucide-react'
 import Link from "next/link"
-import { UserMenu, LoginButton } from "@/components/auth/user-menu"
+import { UserMenu, LoginButton } from "../../../components/auth/user-menu"
 
 // 静态内容组件，可以在构建时预渲染
 export function HeroSection() {

@@ -2,12 +2,12 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ErrorBoundary } from "@/components/error-boundary"
+import { ErrorBoundary } from "../components/error-boundary"
 import { Toaster } from "sonner"
-import { GlobalLoadingIndicator } from "@/components/global-loading-indicator"
-import { AuthProvider } from "@/lib/auth-context"
-import { generateStructuredData } from "@/lib/seo"
-import { WebVitals } from "@/components/performance/web-vitals"
+import { GlobalLoadingIndicator } from "../components/global-loading-indicator"
+import { AuthProvider } from "../lib/auth-context"
+import { generateStructuredData } from "../lib/seo"
+import { WebVitals } from "../components/performance/web-vitals"
 
 const inter = Inter({ 
   subsets: ["latin"],

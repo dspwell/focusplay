@@ -1,5 +1,7 @@
 import { Loader2 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+function cn(...classes: (string | undefined)[]) {
+  return classes.filter(Boolean).join(' ');
+}
 
 // 基础加载指示器
 export function LoadingSpinner({ 

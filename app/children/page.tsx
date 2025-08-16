@@ -18,7 +18,7 @@ import {
 import { useAuth, useRequireAuth } from '../../lib/auth-context'
 import { PageWrapper } from '../../components/page-loading'
 import { CardSkeleton } from '../../components/ui/loading'
-import type { ChildProfile, Gender } from '@/lib/types'
+import type { ChildProfile, Gender } from '../lib/types'
 import { toast } from 'sonner'
 
 export default function ChildrenPage() {

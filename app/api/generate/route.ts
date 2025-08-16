@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
-import { getRandomGameFromDatabase } from "@/lib/gameservice"
+import { getRandomGameFromDatabase } from "../../../lib/gameservice"
 
 const RequestSchema = z.object({
   ageRange: z.string(),
