@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import HomeClient from './home-client'
-import { generateMetadata } from '@/lib/seo'
+import { generateMetadata } from '../lib/seo'
 
 export const metadata: Metadata = generateMetadata({
   title: 'FocusPlay - 幼儿专注力发展平台',

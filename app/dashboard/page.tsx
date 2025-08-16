@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
+import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card'
+import { Button } from '../../components/ui/button'
+import { Badge } from '../../components/ui/badge'
+import { Progress } from '../../components/ui/progress'
 import { 
   User, 
   Baby, 
@@ -17,12 +17,12 @@ import {
   Play,
   Plus
 } from 'lucide-react'
-import { useAuth, useRequireAuth } from '@/lib/auth-context'
-import { useErrorHandler } from '@/hooks/use-error-handler'
-import { useSimpleLoading } from '@/hooks/use-loading'
-import { PageWrapper } from '@/components/page-loading'
-import { CardSkeleton, LoadingSpinner } from '@/components/ui/loading'
-import type { UserStats, Plan } from '@/lib/types'
+import { useAuth, useRequireAuth } from '../../lib/auth-context'
+import { useErrorHandler } from '../../hooks/use-error-handler'
+import { useSimpleLoading } from '../../hooks/use-loading'
+import { PageWrapper } from '../../components/page-loading'
+import { CardSkeleton, LoadingSpinner } from '../../components/ui/loading'
+import type { UserStats, Plan } from '../../lib/types'
 import Link from 'next/link'
 
 interface DashboardData {

@@ -1,8 +1,8 @@
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
-import { withErrorHandling } from '@/lib/api/middleware'
-import type { Scenario, Tool, Focus } from '@/lib/types'
+import { withErrorHandling } from '../../../../../lib/api/middleware'
+import type { Scenario, Tool, Focus } from '../../../../lib/types'
 
 interface UpdateGameRequest {
   name?: string

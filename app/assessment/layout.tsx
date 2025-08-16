@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { generateMetadata } from '@/lib/seo'
+import { generateMetadata } from '../../lib/seo'
 
 export const metadata: Metadata = generateMetadata({
   title: '专注力评估测试',

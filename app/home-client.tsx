@@ -2,11 +2,11 @@
 
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import { HeroSection, StatsSection } from '@/components/home-hero-section'
-import { useGlobalErrorHandler } from '@/hooks/use-error-handler'
+import { HeroSection, StatsSection } from '../components/home-hero-section'
+import { useGlobalErrorHandler } from '../hooks/use-error-handler'
 
 // 动态导入游戏生成器，支持懒加载
-const GameGenerator = dynamic(() => import('@/components/game-generator'), {
+const GameGenerator = dynamic(() => import('../components/game-generator'), {
   loading: () => (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">

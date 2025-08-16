@@ -1,8 +1,8 @@
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
-import { withErrorHandling } from '@/lib/api/middleware'
-import type { GameStepProgress } from '@/lib/types'
+import { withErrorHandling } from '../../../../../lib/api/middleware'
+import type { GameStepProgress } from '../../../../lib/types'
 
 // 更新游戏步骤进度
 const updateStepProgressHandler = async (
