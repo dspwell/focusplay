@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { GameCard } from '@/components/GameCard'
+import { GameCard } from '@/components/gamecard'
 import type { Game } from '@/lib/types'
 
 describe('GameCard', () => {

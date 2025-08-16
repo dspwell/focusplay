@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server"
 import { createClient } from "@/lib/supabase"
-import { pickActivities } from "@/lib/pickActivities"
+import { pickActivities } from "@/lib/pickactivities"
 import { Activity } from "@/lib/types"
 import { withErrorHandling, successResponse, validateRequestBody, handleSupabaseError } from "@/lib/api-response"
 import { createError } from "@/lib/errors"

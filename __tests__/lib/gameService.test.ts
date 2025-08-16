@@ -1,4 +1,4 @@
-import { generateGames } from '@/lib/gameService'
+import { generateGames } from '@/lib/gameservice'
 import type { Scenario, Tool, Focus } from '@/lib/types'
 
 describe('GameService', () => {

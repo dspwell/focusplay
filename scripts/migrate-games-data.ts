@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { GAMES_DATABASE } from '../lib/gameDatabase'
+import { GAMES_DATABASE } from './gamedatabase''
 import * as dotenv from 'dotenv'
 import * as path from 'path'
 

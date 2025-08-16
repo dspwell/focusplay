@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { GameForm } from '@/components/forms/GameForm'
+import { GameForm } from '@/components/forms/gameform'
 
 // Mock useAuth hook
 const mockUseAuth = {
@@ -16,7 +16,7 @@ jest.mock('@/lib/auth-context', () => ({
 
 // Mock generateGames function
 const mockGenerateGames = jest.fn()
-jest.mock('@/lib/gameService', () => ({
+jest.mock('@/lib/gameservice', () => ({
   generateGames: mockGenerateGames
 }))
 

@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Loader2, AlertCircle } from 'lucide-react'
-import { generateGames } from '@/lib/gameService'
+import { generateGames } from '@/lib/gameservice'
 import type { Scenario, Tool, Focus, Game } from '@/lib/types'
 
 const gameFormSchema = z.object({

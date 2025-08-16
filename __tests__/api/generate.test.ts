@@ -29,7 +29,7 @@ jest.mock('next/headers', () => ({
 
 // Mock pickActivities
 const mockPickActivities = jest.fn()
-jest.mock('@/lib/pickActivities', () => ({
+jest.mock('@/lib/pickactivities', () => ({
   pickActivities: mockPickActivities
 }))
 

@@ -1,4 +1,4 @@
-import { pickActivities } from '@/lib/pickActivities'
+import { pickActivities } from '@/lib/pickactivities'
 import type { Activity, Scenario, Tool, Focus } from '@/lib/types'
 
 describe('PickActivities', () => {
