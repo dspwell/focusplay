@@ -7,7 +7,7 @@ import type {
   CompleteGameSessionRequest,
   GameSession,
   GameStepProgress
-} from '../../../lib/types'
+} from '../../../../lib/types'
 
 // 获取特定游戏会话详情
 const getGameSessionHandler = async (
