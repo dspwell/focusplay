@@ -1,3 +1,5 @@
+import path from "path";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Enable strict type checking and linting during builds
@@ -27,16 +29,14 @@ const nextConfig = {
   poweredByHeader: false,
   // Enable static optimization
   output: 'standalone', // For better deployment
-  // Bundle analyzer (uncomment when needed)
-  // webpack: (config, { isServer }) => {
-  //   if (!isServer) {
-  //     config.resolve.fallback = {
-  //       ...config.resolve.fallback,
-  //       fs: false,
-  //     };
-  //   }
-  //   return config;
-  // },
+  // Webpack configuration to ensure @ alias works in all environments
+  webpack: (config) => {
+    config.resolve.alias = { 
+      ...config.resolve.alias, 
+      "@": path.resolve(process.cwd()) 
+    };
+    return config;
+  },
 }
 
 export default nextConfig
