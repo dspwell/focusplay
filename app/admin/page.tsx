@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 import { useRequireAdmin } from '../../hooks/use-admin'
 import { PageWrapper } from '../../components/page-loading'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { Loader2 } from 'lucide-react'
 import { useErrorHandler } from '../../hooks/use-error-handler'
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Bar, BarChart } from 'recharts'
 import Link from 'next/link'
@@ -94,7 +94,7 @@ export default function AdminDashboardPage() {
   }, [isAdmin, authLoading])
 
   if (authLoading) {
-    return <LoadingSpinner />
+    return <Loader2 className="h-5 w-5 animate-spin" />
   }
 
   if (!isAdmin) {
@@ -384,7 +384,7 @@ export default function AdminDashboardPage() {
             </Tabs>
           ) : (
             <div className="text-center py-12">
-              <LoadingSpinner />
+              <Loader2 className="h-5 w-5 animate-spin" />
               <p className="text-gray-600 mt-4">正在加载管理数据...</p>
             </div>
           )}

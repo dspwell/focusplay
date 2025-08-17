@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { useAuth, useRequireAuth } from '@/lib/auth-context'
 import { PageWrapper } from '../../components/page-loading'
+import { Loader2 } from 'lucide-react'
 import { CardSkeleton } from '@/components/ui/loading'
 import type { ChildProfile, Gender } from '../lib/types'
 import { toast } from 'sonner'

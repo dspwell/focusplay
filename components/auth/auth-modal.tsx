@@ -168,7 +168,7 @@ export function AuthModal({ open, onOpenChange, defaultTab = 'signin' }: AuthMod
               >
                 {loading ? (
                   <>
-                    <LoadingSpinner size="small" className="mr-2" />
+                    <Loader2 className="h-4 w-4 animate-spin" />
                     登录中...
                   </>
                 ) : (
@@ -270,7 +270,7 @@ export function AuthModal({ open, onOpenChange, defaultTab = 'signin' }: AuthMod
               >
                 {loading ? (
                   <>
-                    <LoadingSpinner size="small" className="mr-2" />
+                    <Loader2 className="h-4 w-4 animate-spin" />
                     注册中...
                   </>
                 ) : (

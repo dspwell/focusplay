@@ -23,7 +23,7 @@ import {
 } from 'lucide-react'
 import { useRequireAdmin } from '../../../hooks/use-admin'
 import { PageWrapper } from '../../../components/page-loading'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { Loader2 } from 'lucide-react'
 import { useErrorHandler } from '../../../hooks/use-error-handler'
 import { toast } from 'sonner'
 import type { Scenario, Tool, Focus } from '@/lib/types'
@@ -183,7 +183,7 @@ export default function GamesManagementPage() {
   }
 
   if (authLoading) {
-    return <LoadingSpinner />
+    return <Loader2 className="h-5 w-5 animate-spin" />
   }
 
   if (!isAdmin) {
@@ -713,7 +713,7 @@ function GameFormDialog({
             取消
           </Button>
           <Button type="submit" disabled={submitting}>
-            {submitting ? <LoadingSpinner /> : (game ? '更新游戏' : '创建游戏')}
+            {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : (game ? '更新游戏' : '创建游戏')}
           </Button>
         </div>
       </form>

@@ -24,7 +24,7 @@ import {
 } from 'lucide-react'
 import { useAuth, useRequireAuth } from '@/lib/auth-context'
 import { PageWrapper } from '../../components/page-loading'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { Loader2 } from 'lucide-react'
 import { useErrorHandler } from '../../hooks/use-error-handler'
 import type { 
   UserProgressSummary, 
@@ -101,7 +101,7 @@ export default function ProgressPage() {
   }, [isAuthenticated, authLoading, selectedChild, selectedPeriod])
 
   if (authLoading) {
-    return <LoadingSpinner />
+    return <Loader2 className="h-5 w-5 animate-spin" />
   }
 
   if (!isAuthenticated) {
@@ -361,7 +361,7 @@ export default function ProgressPage() {
             </Tabs>
           ) : (
             <div className="text-center py-12">
-              <LoadingSpinner />
+              <Loader2 className="h-5 w-5 animate-spin" />
               <p className="text-gray-600 mt-4">正在加载进度数据...</p>
             </div>
           )}

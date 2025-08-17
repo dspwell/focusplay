@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 import { useRequireAdmin } from '../../../hooks/use-admin'
 import { PageWrapper } from '../../../components/page-loading'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { Loader2 } from 'lucide-react'
 import { useErrorHandler } from '../../../hooks/use-error-handler'
 import { toast } from 'sonner'
 import Link from 'next/link'
@@ -104,7 +104,7 @@ export default function DataManagementPage() {
   }
 
   if (authLoading) {
-    return <LoadingSpinner />
+    return <Loader2 className="h-5 w-5 animate-spin" />
   }
 
   if (!isAdmin) {
@@ -211,7 +211,7 @@ export default function DataManagementPage() {
 
                 {exportLoading && (
                   <div className="flex items-center justify-center py-4">
-                    <LoadingSpinner />
+                    <Loader2 className="h-5 w-5 animate-spin" />
                     <span className="ml-2">正在导出...</span>
                   </div>
                 )}
@@ -245,7 +245,7 @@ export default function DataManagementPage() {
                       onClick={() => handleImport('create')}
                       disabled={importLoading || !importData.trim()}
                     >
-                      {importLoading ? <LoadingSpinner /> : '创建新游戏'}
+                      {importLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : '创建新游戏'}
                     </Button>
                     <Button
                       variant="outline"

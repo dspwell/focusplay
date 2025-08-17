@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { Loader2 } from 'lucide-react'
 
 // 内部组件，处理 useSearchParams
 function LoadingIndicatorContent() {
@@ -59,7 +59,7 @@ export function FloatingLoadingIndicator({
   return (
     <div className={`${positionClasses[position]} z-50`}>
       <div className="bg-white rounded-lg shadow-lg border p-4 flex items-center space-x-3">
-        <LoadingSpinner size="small" className="text-blue-600" />
+        <Loader2 className="h-4 w-4 animate-spin" />
         <span className="text-gray-700 text-sm font-medium">{message}</span>
       </div>
     </div>
@@ -83,7 +83,7 @@ export function ModalLoadingOverlay({
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[9999] p-4">
       <div className="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center space-y-6">
-        <LoadingSpinner size="large" className="mx-auto text-blue-600" />
+        <Loader2 className="h-8 w-8 animate-spin" />
         
         <div className="space-y-2">
           <h3 className="text-lg font-semibold text-gray-800">{message}</h3>
@@ -134,7 +134,7 @@ export function InlineLoadingState({
   if (loading) {
     return (
       <div className="flex items-center space-x-2">
-        <LoadingSpinner size={spinnerSizes[size]} className="text-current" />
+        <Loader2 className="h-5 w-5 animate-spin" />
         <span className="text-current">{loadingText}</span>
       </div>
     )

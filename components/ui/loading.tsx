@@ -1,79 +1,8 @@
-import { Loader2 } from 'lucide-react'
+// Skeleton components for loading states
+// LoadingSpinner has been replaced with Loader2 from lucide-react
+
 function cn(...classes: (string | undefined)[]) {
   return classes.filter(Boolean).join(' ');
-}
-
-// 基础加载指示器
-export function LoadingSpinner({ 
-  className,
-  size = 'default'
-}: { 
-  className?: string
-  size?: 'small' | 'default' | 'large'
-}) {
-  const sizeClasses = {
-    small: 'h-4 w-4',
-    default: 'h-6 w-6',
-    large: 'h-8 w-8'
-  }
-
-  return (
-    <Loader2 className={cn('animate-spin', sizeClasses[size], className)} />
-  )
-}
-
-// 加载按钮组件
-export function LoadingButton({
-  children,
-  loading = false,
-  disabled = false,
-  className,
-  ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  loading?: boolean
-}) {
-  return (
-    <button
-      {...props}
-      disabled={disabled || loading}
-      className={cn(
-        'relative inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md',
-        'bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500',
-        'disabled:opacity-50 disabled:cursor-not-allowed',
-        className
-      )}
-    >
-      {loading && (
-        <LoadingSpinner size="small" className="mr-2" />
-      )}
-      <span className={loading ? 'opacity-70' : ''}>{children}</span>
-    </button>
-  )
-}
-
-// 页面级加载覆盖层
-export function LoadingOverlay({
-  loading = false,
-  message = '正在加载...',
-  children
-}: {
-  loading?: boolean
-  message?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className="relative">
-      {children}
-      {loading && (
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="text-center space-y-4">
-            <LoadingSpinner size="large" className="mx-auto text-blue-600" />
-            <p className="text-gray-600 font-medium">{message}</p>
-          </div>
-        </div>
-      )}
-    </div>
-  )
 }
 
 // 骨架屏组件
@@ -226,36 +155,6 @@ export function TableSkeleton({
           ))}
         </div>
       ))}
-    </div>
-  )
-}
-
-// 进度条加载组件
-export function ProgressLoader({
-  progress = 0,
-  message = '正在处理...',
-  showPercentage = true
-}: {
-  progress?: number
-  message?: string
-  showPercentage?: boolean
-}) {
-  return (
-    <div className="w-full max-w-md mx-auto space-y-4">
-      <div className="text-center">
-        <LoadingSpinner size="large" className="mx-auto mb-4 text-blue-600" />
-        <p className="text-gray-600 font-medium">{message}</p>
-        {showPercentage && (
-          <p className="text-sm text-gray-500 mt-1">{Math.round(progress)}%</p>
-        )}
-      </div>
-      
-      <div className="w-full bg-gray-200 rounded-full h-2">
-        <div 
-          className="bg-blue-600 h-2 rounded-full transition-all duration-300 ease-out"
-          style={{ width: `${Math.max(0, Math.min(100, progress))}%` }}
-        />
-      </div>
     </div>
   )
 }
