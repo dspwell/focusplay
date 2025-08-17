@@ -1,13 +1,13 @@
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
-import { withErrorHandling } from '../../../../lib/api/middleware'
+import { withErrorHandling } from '../@/lib/api/middleware'
 import type { 
   UpdateGameSessionRequest, 
   CompleteGameSessionRequest,
   GameSession,
   GameStepProgress
-} from '../../../../lib/types'
+} from '../@/lib/types'
 
 // 获取特定游戏会话详情
 const getGameSessionHandler = async (

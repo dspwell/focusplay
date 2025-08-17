@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server"
-import { createClient } from "../../../lib/supabase"
-import { withErrorHandling, successResponse, validateRequestBody, handleSupabaseError } from "../../../lib/api-response"
-import { createError } from "../../../lib/errors"
+import { createClient } from "@/lib/supabase"
+import { withErrorHandling, successResponse, validateRequestBody, handleSupabaseError } from "@/lib/api-response"
+import { createError } from "@/lib/errors"
 import { z } from "zod"
 
 // 用户档案更新 schema

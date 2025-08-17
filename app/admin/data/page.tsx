@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card'
-import { Button } from '../../../components/ui/button'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select'
-import { Textarea } from '../../../components/ui/textarea'
-import { Label } from '../../../components/ui/label'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
 import { 
   Download, 
   Upload, 
@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 import { useRequireAdmin } from '../../../hooks/use-admin'
 import { PageWrapper } from '../../../components/page-loading'
-import { LoadingSpinner } from '../../../components/ui/loading'
+import { LoadingSpinner } from '@/components/ui/loading'
 import { useErrorHandler } from '../../../hooks/use-error-handler'
 import { toast } from 'sonner'
 import Link from 'next/link'

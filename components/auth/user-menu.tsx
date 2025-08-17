@@ -20,7 +20,7 @@ import {
   Crown,
   Shield
 } from 'lucide-react'
-import { useAuth } from '../../lib/auth-context'
+import { useAuth } from '@/lib/auth-context'
 import { useRole } from '../../hooks/use-admin'
 import { useErrorHandler } from '../../hooks/use-error-handler'
 import { AuthModal } from './auth-modal'

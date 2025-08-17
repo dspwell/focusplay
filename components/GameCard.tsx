@@ -4,7 +4,7 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { Clock, Star, AlertTriangle } from 'lucide-react'
-import type { Game } from '../../lib/types'
+import type { Game } from '@/lib/types'
 
 interface GameCardProps {
   game: Game

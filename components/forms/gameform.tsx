@@ -11,8 +11,8 @@ import { Label } from '../ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { Alert, AlertDescription } from '../ui/alert'
 import { Loader2, AlertCircle } from 'lucide-react'
-import { generateGames } from '../../lib/gameservice'
-import type { Scenario, Tool, Focus, Game } from '../../lib/types'
+import { generateGames } from '@/lib/gameservice'
+import type { Scenario, Tool, Focus, Game } from '@/lib/types'
 
 const gameFormSchema = z.object({
   email: z.string().email('邮箱格式不正确').min(1, '请输入邮箱'),
