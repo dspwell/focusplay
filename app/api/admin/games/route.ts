@@ -1,10 +1,11 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { createServerSupabaseClient } from '@/lib/auth'
 import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 import type { Scenario, Tool, Focus } from '@/lib/types'
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 interface CreateGameRequest {
   name: string
@@ -34,7 +35,7 @@ interface UpdateGameRequest extends Partial<CreateGameRequest> {
 
 // 获取游戏列表（管理员）
 const getGamesHandler = async (req: NextRequest) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证管理员权限
   const { data: { session }, error: authError } = await supabase.auth.getSession()
@@ -123,7 +124,7 @@ const getGamesHandler = async (req: NextRequest) => {
 
 // 创建新游戏（管理员）
 const createGameHandler = async (req: NextRequest) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证管理员权限
   const { data: { session }, error: authError } = await supabase.auth.getSession()

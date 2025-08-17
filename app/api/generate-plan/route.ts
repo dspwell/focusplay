@@ -7,6 +7,8 @@ import { createError } from "@/lib/errors"
 import { z } from "zod"
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // 请求体验证 schema
 const generatePlanSchema = z.object({

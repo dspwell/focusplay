@@ -3,6 +3,8 @@ import { z } from "zod"
 import { getRandomGameFromDatabase } from "@/lib/gameservice"
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 const RequestSchema = z.object({
   ageRange: z.string(),

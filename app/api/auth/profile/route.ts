@@ -5,6 +5,8 @@ import { createError } from "@/lib/errors"
 import { z } from "zod"
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // 用户档案更新 schema
 const updateProfileSchema = z.object({

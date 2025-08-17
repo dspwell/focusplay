@@ -1,10 +1,11 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { createServerSupabaseClient } from '@/lib/auth'
 import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
-import type { Scenario, Tool, Focus } from '../@/lib/types'
+import type { Scenario, Tool, Focus } from '@/lib/types'
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 interface UpdateGameRequest {
   name?: string
@@ -33,7 +34,7 @@ const getGameHandler = async (
   req: NextRequest,
   { params }: { params: { gameId: string } }
 ) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证管理员权限
   const { data: { session }, error: authError } = await supabase.auth.getSession()
@@ -129,7 +130,7 @@ const updateGameHandler = async (
   req: NextRequest,
   { params }: { params: { gameId: string } }
 ) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证管理员权限
   const { data: { session }, error: authError } = await supabase.auth.getSession()
@@ -256,7 +257,7 @@ const deleteGameHandler = async (
   req: NextRequest,
   { params }: { params: { gameId: string } }
 ) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证管理员权限
   const { data: { session }, error: authError } = await supabase.auth.getSession()

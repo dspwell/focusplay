@@ -1,13 +1,14 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { createServerSupabaseClient } from '@/lib/auth'
 import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // 导入游戏数据（管理员）
 const importGamesHandler = async (req: NextRequest) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证管理员权限
   const { data: { session }, error: authError } = await supabase.auth.getSession()

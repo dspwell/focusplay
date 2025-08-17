@@ -1,17 +1,18 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { createServerSupabaseClient } from '@/lib/auth'
 import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
-import type { GameStepProgress } from '../@/lib/types'
+import type { GameStepProgress } from '@/lib/types'
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // 更新游戏步骤进度
 const updateStepProgressHandler = async (
   req: NextRequest,
   { params }: { params: { sessionId: string } }
 ) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证用户
   const { data: { session }, error: authError } = await supabase.auth.getSession()
@@ -138,7 +139,7 @@ const getStepProgressHandler = async (
   req: NextRequest,
   { params }: { params: { sessionId: string } }
 ) => {
-  const supabase = createRouteHandlerClient({ cookies })
+  const supabase = createServerSupabaseClient()
   
   // 验证用户
   const { data: { session }, error: authError } = await supabase.auth.getSession()
