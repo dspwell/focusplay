@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog"
 import { Badge } from "@/components/ui/badge"
-import { Loader2, Play, Check, Star, X } from 'lucide-react'
-import { useErrorHandler } from "../../../hooks/use-error-handler"
+import { Loader2, Play, Check, Star, X, Target } from 'lucide-react'
+import { useErrorHandler } from "@/hooks/use-error-handler"
 import { toast } from "sonner"
 
 interface GameData {

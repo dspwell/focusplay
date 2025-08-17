@@ -1,7 +1,7 @@
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
-import { withErrorHandling } from '../@/lib/api/middleware'
+import { withErrorHandling } from '@/lib/api/middleware'
 
 // 获取管理员仪表板数据
 const getAdminDashboardHandler = async (req: NextRequest) => {
