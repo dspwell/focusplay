@@ -15,10 +15,10 @@ import {
   AlertTriangle,
   CheckCircle
 } from 'lucide-react'
-import { useRequireAdmin } from '../../../hooks/use-admin'
-import { PageWrapper } from '../../../components/page-loading'
+import { useRequireAdmin } from '@/hooks/use-admin'
+import { PageWrapper } from '@/components/page-loading'
 import { Loader2 } from 'lucide-react'
-import { useErrorHandler } from '../../../hooks/use-error-handler'
+import { useErrorHandler } from '@/hooks/use-error-handler'
 import { toast } from 'sonner'
 import Link from 'next/link'
 

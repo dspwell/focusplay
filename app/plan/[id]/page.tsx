@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, Target, Wrench, AlertCircle } from 'lucide-react'
 import { Plan, PlanItem, Focus } from "@/lib/types"
-import { PageWrapper, ContentLoader } from "../../../components/page-loading"
+import { PageWrapper, ContentLoader } from "@/components/page-loading"
 import { CardSkeleton, ListSkeleton } from "@/components/ui/loading"
-import { useErrorHandler } from "../../../hooks/use-error-handler"
-import { useSimpleLoading } from "../../../hooks/use-loading"
+import { useErrorHandler } from "@/hooks/use-error-handler"
+import { useSimpleLoading } from "@/hooks/use-loading"
 import { Button } from "@/components/ui/button"
 
 interface PlanPageProps {
