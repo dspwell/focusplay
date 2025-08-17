@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { Button } from '../ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,8 +9,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+} from '../ui/dropdown-menu'
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { 
   User, 
   Settings, 
@@ -20,9 +20,9 @@ import {
   Crown,
   Shield
 } from 'lucide-react'
-import { useAuth } from '@/lib/auth-context'
-import { useRole } from '@/hooks/use-admin'
-import { useErrorHandler } from '@/hooks/use-error-handler'
+import { useAuth } from '../../lib/auth-context'
+import { useRole } from '../../hooks/use-admin'
+import { useErrorHandler } from '../../hooks/use-error-handler'
 import { AuthModal } from './auth-modal'
 
 export function UserMenu() {

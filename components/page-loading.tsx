@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { LoadingSpinner } from '../ui/loading'
 
 // 页面切换加载指示器
 export function PageLoadingIndicator() {

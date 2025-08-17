@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react'
 import { toast } from 'sonner'
-import { AppError, getUserFriendlyMessage } from '@/lib/errors'
+import { AppError, getUserFriendlyMessage } from '../lib/errors'
 
 interface UseErrorHandlerOptions {
   showToast?: boolean

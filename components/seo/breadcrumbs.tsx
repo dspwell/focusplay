@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ChevronRight, Home } from 'lucide-react'
-import { generateBreadcrumbStructuredData } from '@/lib/seo'
+import { generateBreadcrumbStructuredData } from '../../lib/seo'
 import StructuredData from './structured-data'
 
 export interface BreadcrumbItem {

@@ -1,10 +1,10 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
-import { createClient } from '@/lib/supabase'
+import { createClient } from './supabase'
 import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js'
-import type { AuthUser, UserProfile, ChildProfile, AuthContextType } from '@/lib/types'
-import { useErrorHandler } from '@/hooks/use-error-handler'
+import type { AuthUser, UserProfile, ChildProfile, AuthContextType } from './types'
+import { useErrorHandler } from '../hooks/use-error-handler'
 import { toast } from 'sonner'
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)

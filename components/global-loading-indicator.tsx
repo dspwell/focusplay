@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { LoadingSpinner } from '@/components/ui/loading'
+import { LoadingSpinner } from '../ui/loading'
 
 // 内部组件，处理 useSearchParams
 function LoadingIndicatorContent() {
