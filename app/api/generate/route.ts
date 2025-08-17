@@ -2,6 +2,8 @@ import { type NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
 import { getRandomGameFromDatabase } from "@/lib/gameservice"
 
+export const runtime = 'nodejs';
+
 const RequestSchema = z.object({
   ageRange: z.string(),
   scene: z.string(),

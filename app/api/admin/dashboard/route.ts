@@ -3,6 +3,8 @@ import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 
+export const runtime = 'nodejs';
+
 // 获取管理员仪表板数据
 const getAdminDashboardHandler = async (req: NextRequest) => {
   const supabase = createRouteHandlerClient({ cookies })

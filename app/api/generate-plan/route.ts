@@ -6,6 +6,8 @@ import { withErrorHandling, successResponse, validateRequestBody, handleSupabase
 import { createError } from "@/lib/errors"
 import { z } from "zod"
 
+export const runtime = 'nodejs';
+
 // 请求体验证 schema
 const generatePlanSchema = z.object({
   email: z.string().email('邮箱格式不正确'),

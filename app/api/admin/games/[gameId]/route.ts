@@ -4,6 +4,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 import type { Scenario, Tool, Focus } from '../@/lib/types'
 
+export const runtime = 'nodejs';
+
 interface UpdateGameRequest {
   name?: string
   description?: string

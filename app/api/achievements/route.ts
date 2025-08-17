@@ -4,6 +4,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 import type { Achievement } from '@/lib/types'
 
+export const runtime = 'nodejs';
+
 // 获取用户成就列表
 const getAchievementsHandler = async (req: NextRequest) => {
   const supabase = createRouteHandlerClient({ cookies })

@@ -3,6 +3,8 @@ import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 
+export const runtime = 'nodejs';
+
 // 获取用户分析数据
 const getAnalyticsHandler = async (req: NextRequest) => {
   const supabase = createRouteHandlerClient({ cookies })

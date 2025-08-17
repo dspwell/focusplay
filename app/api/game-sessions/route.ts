@@ -9,6 +9,8 @@ import type {
   GameStepProgress
 } from '@/lib/types'
 
+export const runtime = 'nodejs';
+
 // 获取用户的游戏会话列表
 const getGameSessionsHandler = async (req: NextRequest) => {
   const supabase = createRouteHandlerClient({ cookies })

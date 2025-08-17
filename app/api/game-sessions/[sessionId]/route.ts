@@ -9,6 +9,8 @@ import type {
   GameStepProgress
 } from '@/lib/types'
 
+export const runtime = 'nodejs';
+
 // 获取特定游戏会话详情
 const getGameSessionHandler = async (
   req: NextRequest,

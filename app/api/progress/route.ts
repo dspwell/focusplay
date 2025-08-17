@@ -4,6 +4,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 import type { UserProgressSummary, ProgressData } from '@/lib/types'
 
+export const runtime = 'nodejs';
+
 // 获取用户或孩子的整体进度
 const getProgressHandler = async (req: NextRequest) => {
   const supabase = createRouteHandlerClient({ cookies })

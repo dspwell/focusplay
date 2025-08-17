@@ -4,6 +4,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { withErrorHandling } from '@/lib/api/middleware'
 import type { GameStepProgress } from '../@/lib/types'
 
+export const runtime = 'nodejs';
+
 // 更新游戏步骤进度
 const updateStepProgressHandler = async (
   req: NextRequest,

@@ -4,6 +4,8 @@ import { withErrorHandling, successResponse, validateRequestBody, handleSupabase
 import { createError } from "@/lib/errors"
 import { z } from "zod"
 
+export const runtime = 'nodejs';
+
 // 用户档案更新 schema
 const updateProfileSchema = z.object({
   display_name: z.string().max(100, '姓名不能超过100个字符').optional(),
