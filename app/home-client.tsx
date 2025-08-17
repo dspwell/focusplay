@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { HeroSection, StatsSection } from '../components/home-hero-section'
 import { useGlobalErrorHandler } from '../hooks/use-error-handler'
-import { ErrorBoundary } from '../components/error-boundary'
 
 // 动态导入游戏生成器，支持懒加载
 const GameGenerator = dynamic(() => import('../components/game-generator'), {
@@ -32,27 +31,19 @@ export default function HomeClient() {
   }, [setupGlobalHandlers])
 
   return (
-    <ErrorBoundary>
+    <>
       {/* 静态内容，可以在构建时预渲染 */}
-      <ErrorBoundary>
-        <HeroSection />
-      </ErrorBoundary>
+      <HeroSection />
       
       {/* 统计数据，静态内容 */}
-      <ErrorBoundary>
-        <StatsSection />
-      </ErrorBoundary>
+      <StatsSection />
       
       {/* 动态游戏生成器，懒加载 */}
-      <ErrorBoundary>
-        <GameGenerator />
-      </ErrorBoundary>
+      <GameGenerator />
       
       {/* 其他静态内容区域 */}
-      <ErrorBoundary>
-        <CTASection />
-      </ErrorBoundary>
-    </ErrorBoundary>
+      <CTASection />
+    </>
   )
 }
 
