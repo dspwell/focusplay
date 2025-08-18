@@ -6,7 +6,7 @@ import { UserMenu, LoginButton } from "@/components/auth/user-menu"
 // 静态内容组件，可以在构建时预渲染
 export function HeroSection() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* 顶部导航区域 */}
       <div className="container mx-auto px-4 py-8">
         <nav className="flex justify-between items-center mb-12">
@@ -26,7 +26,7 @@ export function HeroSection() {
         </nav>
 
         {/* 主标题区域 */}
-        <div className="text-center mb-16">
+        <div className="text-center py-16 pb-8">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
             专业的幼儿
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
