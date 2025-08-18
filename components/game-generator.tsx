@@ -24,12 +24,15 @@ interface GameData {
 // 骨架屏组件
 function GameGeneratorSkeleton() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="container mx-auto px-4">
+        <div className="text-center mb-8">
+          <div className="h-6 bg-gray-200 rounded animate-pulse w-24 mx-auto"></div>
+        </div>
         <Card className="max-w-4xl mx-auto">
           <CardHeader>
             <div className="h-8 bg-gray-200 rounded animate-pulse mb-2"></div>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-2/3"></div>
+            <div className="h-4 bg-gray-200 rounded animate-pulse w-2/3 mx-auto"></div>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -122,29 +125,21 @@ export function GameGenerator() {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            免费体验游戏生成
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            快速生成适合您孩子的专注力训练游戏，每日可免费体验 10 次
-          </p>
-          <div className="mt-4">
-            <Badge variant="outline" className="text-blue-600">
-              今日已使用: {getTodayDrawCount()}/10 次
-            </Badge>
-          </div>
+        <div className="text-center mb-8">
+          <Badge variant="outline" className="text-blue-600">
+            今日已使用: {getTodayDrawCount()}/10 次
+          </Badge>
         </div>
 
         <Card className="max-w-4xl mx-auto shadow-xl">
           <CardHeader>
             <CardTitle className="text-2xl text-center text-gray-800">
-              选择游戏条件
+              立即生成专属游戏
             </CardTitle>
             <p className="text-center text-gray-600">
-              根据孩子的情况选择合适的游戏条件
+              选择条件，AI 为您孩子定制专注力训练游戏
             </p>
           </CardHeader>
           <CardContent className="space-y-6">

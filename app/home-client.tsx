@@ -15,12 +15,25 @@ import { useGlobalErrorHandler } from '../hooks/use-error-handler'
 // 动态导入游戏生成器，支持懒加载
 const GameGenerator = dynamic(() => import('../components/game-generator'), {
   loading: () => (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center">
-          <div className="h-8 bg-gray-200 rounded animate-pulse mb-4 max-w-md mx-auto"></div>
-          <div className="h-4 bg-gray-200 rounded animate-pulse mb-8 max-w-lg mx-auto"></div>
-          <div className="h-64 bg-gray-200 rounded animate-pulse"></div>
+        <div className="text-center mb-8">
+          <div className="h-6 bg-gray-200 rounded animate-pulse w-24 mx-auto"></div>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-xl p-6">
+            <div className="h-8 bg-gray-200 rounded animate-pulse mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded animate-pulse w-2/3 mx-auto mb-8"></div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="space-y-2">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+                </div>
+              ))}
+            </div>
+            <div className="h-12 bg-gray-200 rounded animate-pulse w-48 mx-auto"></div>
+          </div>
         </div>
       </div>
     </section>
