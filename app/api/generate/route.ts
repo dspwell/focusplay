@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 const RequestSchema = z.object({
-  ageRange: z.string(),
+  age_range: z.string(),
   scene: z.string(),
   props: z.string(),
   focus: z.string().optional(),
@@ -29,16 +29,18 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     console.log("收到的请求参数:", body) // 添加调试日志
     
-    const { ageRange, scene, props, focus } = RequestSchema.parse(body)
-    console.log("解析后的参数:", { ageRange, scene, props, focus }) // 添加调试日志
+    const { age_range, scene, props, focus } = RequestSchema.parse(body)
+    console.log("解析后的参数:", { age_range, scene, props, focus }) // 添加调试日志
 
-    // 从Supabase数据库中查找匹配的游戏
-    const matchedGame = await getRandomGameFromDatabase(ageRange, scene, props, focus === "none" ? undefined : focus)
+    // 从Supabase数据库中查找匹配的游戏  
+    // 注意：getRandomGameFromDatabase的第一个参数叫ageRange，所以我们传入age_range但它内部会转换为ageRange
+    const matchedGame = await getRandomGameFromDatabase(age_range, scene, props, focus === "none" ? undefined : focus)
     console.log("匹配到的游戏:", matchedGame) // 添加调试日志
     
     if (!matchedGame) {
       console.log("没有找到匹配的游戏") // 添加调试日志
       return NextResponse.json({ 
+        success: false,
         error: "No matching games found for the selected criteria" 
       }, { status: 404 })
     }
@@ -59,19 +61,24 @@ export async function POST(request: NextRequest) {
 
     // 验证数据格式
     const validatedData = GameDataSchema.parse(gameData)
-    return NextResponse.json(validatedData)
+    return NextResponse.json({
+      success: true,
+      data: validatedData
+    })
 
   } catch (error) {
     console.error("API Error:", error)
 
     if (error instanceof z.ZodError) {
       return NextResponse.json({ 
+        success: false,
         error: "Validation failed", 
         details: error.errors 
-      }, { status: 500 })
+      }, { status: 400 })
     }
 
     return NextResponse.json({ 
+      success: false,
       error: "Internal server error" 
     }, { status: 500 })
   }
