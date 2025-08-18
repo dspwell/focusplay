@@ -3,6 +3,13 @@
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { HeroSection, StatsSection } from '../components/home-hero-section'
+import { 
+  CoreAdvantagesSection, 
+  FeaturesSection, 
+  TestimonialsSection, 
+  PricingSection, 
+  FooterSection 
+} from '../components/home-sections'
 import { useGlobalErrorHandler } from '../hooks/use-error-handler'
 
 // 动态导入游戏生成器，支持懒加载
@@ -32,17 +39,32 @@ export default function HomeClient() {
 
   return (
     <>
-      {/* 静态内容，可以在构建时预渲染 */}
+      {/* 主标题和导航 */}
       <HeroSection />
       
-      {/* 统计数据，静态内容 */}
-      <StatsSection />
-      
-      {/* 动态游戏生成器，懒加载 */}
+      {/* 立即生成专属游戏 - 游戏生成器 */}
       <GameGenerator />
       
-      {/* 其他静态内容区域 */}
+      {/* 统计数据 */}
+      <StatsSection />
+      
+      {/* 核心优势 */}
+      <CoreAdvantagesSection />
+      
+      {/* 功能介绍 */}
+      <FeaturesSection />
+      
+      {/* 用户证言 */}
+      <TestimonialsSection />
+      
+      {/* 价格方案 */}
+      <PricingSection />
+      
+      {/* 行动号召 */}
       <CTASection />
+      
+      {/* 网页尾部 */}
+      <FooterSection />
     </>
   )
 }
