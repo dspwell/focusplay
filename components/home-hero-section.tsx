@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Star, Users, Clock, Target, Brain, Heart } from 'lucide-react'
+import { Star, Users, Clock, Target, Brain } from 'lucide-react'
 import Link from "next/link"
 import { UserMenu, LoginButton } from "@/components/auth/user-menu"
 
@@ -51,58 +50,11 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* 特色功能卡片 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <FeatureCard
-            icon={<Target className="h-6 w-6" />}
-            title="个性化评估"
-            description="根据孩子年龄和特点，提供专业的专注力评估"
-          />
-          <FeatureCard
-            icon={<Brain className="h-6 w-6" />}
-            title="科学训练"
-            description="基于儿童发展心理学，设计系统性训练方案"
-          />
-          <FeatureCard
-            icon={<Heart className="h-6 w-6" />}
-            title="亲子互动"
-            description="促进家长与孩子的深度互动，增进亲子关系"
-          />
-          <FeatureCard
-            icon={<Star className="h-6 w-6" />}
-            title="持续跟踪"
-            description="记录训练进展，及时调整计划，确保效果"
-          />
-        </div>
       </div>
     </section>
   )
 }
 
-// 特色功能卡片组件
-function FeatureCard({
-  icon,
-  title,
-  description
-}: {
-  icon: React.ReactNode
-  title: string
-  description: string
-}) {
-  return (
-    <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-      <CardHeader>
-        <div className="flex justify-center mb-2 text-blue-600">
-          {icon}
-        </div>
-        <CardTitle className="text-lg">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-gray-600">{description}</p>
-      </CardContent>
-    </Card>
-  )
-}
 
 // 统计数据组件（可以后续添加真实数据）
 export function StatsSection() {
