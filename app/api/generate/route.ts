@@ -54,7 +54,9 @@ export async function POST(request: NextRequest) {
       difficulty_star: matchedGame.difficulty,
       activity_type: matchedGame.activity_type,
       steps: matchedGame.steps,
-      tips: matchedGame.tips,
+      tips: matchedGame.tips && matchedGame.tips.length > 0 
+        ? matchedGame.tips 
+        : ["游戏过程中注意安全，确保孩子在合适的环境中进行", "鼓励孩子尝试，给予积极的反馈和支持"], // 提供默认tips
     }
 
     console.log("转换后的游戏数据:", gameData) // 添加调试日志
