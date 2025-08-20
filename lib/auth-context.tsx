@@ -180,6 +180,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  // 谷歌登录
+  const signInWithGoogle = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        }
+      }
+    })
+
+    if (error) {
+      throw new Error(getAuthErrorMessage(error.message))
+    }
+  }
+
   // 登出
   const signOut = async () => {
     const { error } = await supabase.auth.signOut()
@@ -262,6 +280,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loading,
     signIn,
     signUp,
+    signInWithGoogle,
     signOut,
     updateProfile,
     refreshProfile

@@ -197,6 +197,7 @@ export function LoginButton({
         variant={variant}
         size={size}
         onClick={() => setShowAuthModal(true)}
+        className={variant === "ghost" ? "text-gray-600 hover:text-gray-800" : ""}
       >
         {children || '登录'}
       </Button>
@@ -204,6 +205,40 @@ export function LoginButton({
         open={showAuthModal}
         onOpenChange={setShowAuthModal}
         defaultTab="signin"
+      />
+    </>
+  )
+}
+
+// 注册按钮组件
+export function RegisterButton({ 
+  children, 
+  variant = "default",
+  size = "default"
+}: {
+  children?: React.ReactNode
+  variant?: "default" | "outline" | "ghost"
+  size?: "default" | "sm" | "lg"
+}) {
+  const { user } = useAuth()
+  const [showAuthModal, setShowAuthModal] = useState(false)
+
+  if (user) return null
+
+  return (
+    <>
+      <Button
+        variant={variant}
+        size={size}
+        onClick={() => setShowAuthModal(true)}
+        className={variant === "outline" ? "border-blue-600 text-blue-600 hover:bg-blue-50" : ""}
+      >
+        {children || '注册'}
+      </Button>
+      <AuthModal 
+        open={showAuthModal}
+        onOpenChange={setShowAuthModal}
+        defaultTab="signup"
       />
     </>
   )

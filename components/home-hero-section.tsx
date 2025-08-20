@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { Star, Users, Clock, Target, Brain } from 'lucide-react'
+import { Star, Users, Clock, Target, Focus, Puzzle, Heart } from 'lucide-react'
 import Link from "next/link"
-import { UserMenu, LoginButton } from "@/components/auth/user-menu"
+import { UserMenu, LoginButton, RegisterButton } from "@/components/auth/user-menu"
 
 // 静态内容组件，可以在构建时预渲染
 export function HeroSection() {
@@ -10,18 +10,30 @@ export function HeroSection() {
       {/* 顶部导航区域 */}
       <div className="container mx-auto px-4 py-8">
         <nav className="flex justify-between items-center mb-12">
-          <div className="flex items-center space-x-2">
-            <Brain className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-800">FocusPlay</span>
+          <div className="flex items-center space-x-3">
+            {/* 新的幼儿专注力主题logo */}
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Focus className="h-6 w-6 text-white" />
+              </div>
+              <div className="absolute -top-1 -right-1">
+                <Heart className="h-4 w-4 text-pink-400 fill-current" />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-gray-800">FocusPlay</span>
+              <span className="text-xs text-gray-500">幼儿专注力发展</span>
+            </div>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <Link href="/assessment">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                 开始评估
               </Button>
             </Link>
             <UserMenu />
-            <LoginButton variant="outline" />
+            <RegisterButton variant="outline" />
+            <LoginButton variant="ghost" />
           </div>
         </nav>
 
