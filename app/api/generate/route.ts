@@ -17,7 +17,7 @@ const GameDataSchema = z.object({
   game_name: z.string(),
   goals: z.array(z.string()).max(3),
   materials: z.string(),
-  duration_min: z.number().min(3).max(8), // Updated to allow a wider range
+  duration_min: z.number().min(3).max(8), // Appropriate for young children's attention span
   difficulty_star: z.number().min(1).max(5),
   activity_type: z.union([z.literal("quiet"), z.literal("active")]),
   steps: z.array(z.string()).min(3).max(5),
